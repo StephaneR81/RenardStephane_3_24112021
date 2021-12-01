@@ -4,11 +4,21 @@ $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
 
+$color-black: black;
+$color-grey: grey;
+
+$color-bg-location: linear-gradient(
+  180deg,
+  rgb(197, 196, 196) 0%,
+  rgba(226, 226, 226, 1) 10%
+);
+
 $button-bg: linear-gradient(355deg, $primary 1%, $secondary 100%);
 $grey-bg: rgba(128, 128, 128, 0.062);
-$shadow-color: gray;
+$shadow-color: rgba(128, 128, 128, 0.411);
 
 //MIXINS
+
 @mixin fontFamilyRoboto($size) {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: $size;
@@ -18,6 +28,24 @@ $shadow-color: gray;
   font-family: Shrikhand, Arial, Helvetica, sans-serif;
   font-size: $size;
 }
+
+//TITLES FONT SHRIKHAND
+@mixin fontTitle($size, $weight, $color) {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+//TEXTS FONT ROBOTO
+@mixin fontText($size, $weight, $color) {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+// HEADER FOR MOBILES < 768PX
 
 * {
   box-sizing: border-box;
@@ -32,7 +60,7 @@ body {
 }
 
 h1 {
-  @include fontFamilyShrikhand(31px);
+  @include fontTitle(31px, bold, $color-black);
 
   width: 100%;
 
@@ -42,7 +70,7 @@ h1 {
 }
 
 .location {
-  @include fontFamilyRoboto(17px);
+  @include fontText(17px, bold, $color-black);
 
   display: flex;
   align-items: center;
@@ -51,17 +79,12 @@ h1 {
   height: 50px;
 
   margin: 0;
-  // padding-left: 50px;
+
   padding-right: 40px;
 
   text-align: left;
 
-  background: rgb(147, 145, 145);
-  background: linear-gradient(
-    180deg,
-    rgb(197, 196, 196) 0%,
-    rgba(226, 226, 226, 1) 10%
-  );
+  background-image: $color-bg-location;
 
   i {
     margin-right: 15px;
@@ -111,7 +134,7 @@ h1 {
     border-radius: 50px;
   }
 
-  .explore-restaurants {
+  .explore-button {
     @include fontFamilyRoboto(17px);
 
     padding: 15px 20px;
@@ -132,5 +155,125 @@ h1 {
       box-shadow: 2px 2px 10px 3px $shadow-color;
       filter: brightness(115%);
     }
+  }
+}
+
+// MAIN SECTION (ASIDE + SECTION RESTAURANTS) FOR MOBILES < 768PX
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+aside {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  margin: 0 20px;
+
+  h3 {
+    align-self: flex-start;
+
+    @include fontFamilyRoboto(23px);
+
+    font-weight: bold;
+  }
+
+  .wrapper-steps {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 50px;
+
+    a {
+      display: block;
+
+      width: 100%;
+      height: fit-content;
+
+      margin-top: 20px;
+
+      border-radius: 20px;
+    }
+
+    &__step {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      height: 70px;
+
+      border-radius: 20px;
+
+      padding-right: 50px;
+
+      background-color: $grey-bg;
+
+      box-shadow: 5px 5px 20px 1px $shadow-color;
+
+      ul {
+        display: flex;
+
+        @include fontFamilyRoboto(16px);
+        font-weight: bold;
+
+        list-style: none;
+        padding-left: 0;
+
+        color: black;
+
+        .number {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 25px;
+          height: 25px;
+
+          margin-left: -8px;
+
+          font-weight: normal;
+          font-size: 15px;
+
+          color: white;
+
+          background-color: $primary;
+          border-radius: 50px;
+        }
+
+        .icon {
+          margin-left: 20px;
+          font-size: 20px;
+          color: gray;
+        }
+
+        .text {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+//RESTAURANTS SECTION FOR MOBILES < 768PX
+
+.restaurants {
+  margin-top: 20px;
+
+  background-color: $grey-bg;
+
+  h3 {
+    @include fontFamilyRoboto(23px);
+
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+
+  .wrapper-cards {
+    margin: 0 20px;
   }
 }
