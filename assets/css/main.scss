@@ -403,10 +403,10 @@ footer {
 }
 
 //============================================================================
-//= TABLET VERSION FROM 768PX TO 1024PX ======================================
+//= TABLET VERSION FROM 768PX TO 1023PX ======================================
 //============================================================================
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .restaurants {
     .wrapper-cards {
       display: flex;
@@ -428,9 +428,9 @@ footer {
 }
 
 //============================================================================
-//= DESKTOP VERSION SUPERIOR TO 1024PX =======================================
+//= DESKTOP VERSION SUPERIOR TO 1023PX =======================================
 //============================================================================
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   aside {
     .wrapper-steps {
       flex-direction: row;
