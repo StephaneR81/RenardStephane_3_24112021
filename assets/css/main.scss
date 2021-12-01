@@ -1,9 +1,12 @@
 //VARIABLES
-$grey-bg: rgba(128, 128, 128, 0.062);
 
 $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
+
+$button-bg: linear-gradient(355deg, $primary 1%, $secondary 100%);
+$grey-bg: rgba(128, 128, 128, 0.062);
+$shadow-color: gray;
 
 //MIXINS
 @mixin fontFamilyRoboto($size) {
@@ -43,12 +46,13 @@ h1 {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  width: 100%;
   height: 50px;
 
   margin: 0;
-  padding-left: 100px;
+  // padding-left: 50px;
+  padding-right: 40px;
 
   text-align: left;
 
@@ -67,14 +71,23 @@ h1 {
 }
 
 .wrapper-reservation {
-  padding: 50px 35px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  padding-top: 25px;
+  padding-right: 35px;
+  padding-bottom: 40px;
+  padding-left: 35px;
+
   background-color: $grey-bg;
 
   h2 {
-    @include fontFamilyRoboto(26px);
+    @include fontFamilyRoboto(25px);
 
     margin: 0;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
     text-align: center;
   }
@@ -83,7 +96,7 @@ h1 {
     @include fontFamilyRoboto(17.5px);
 
     margin-top: 7px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 
     text-align: center;
 
@@ -101,7 +114,7 @@ h1 {
   .explore-restaurants {
     @include fontFamilyRoboto(17px);
 
-    padding: 15px 0;
+    padding: 15px 20px;
 
     border-radius: 50px;
 
@@ -109,7 +122,13 @@ h1 {
 
     color: white;
 
-    background: $primary;
-    background: linear-gradient(355deg, $primary 1%, $secondary 100%);
+    background-image: $button-bg;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 3px 3px 10px 3px $shadow-color;
+      filter: brightness(115%);
+    }
   }
 }
