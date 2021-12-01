@@ -355,5 +355,49 @@ aside {
 
 //FOOTER SECTION MOBILES < 768PX
 
-// footer {
-// }
+footer {
+  padding: 20px 5px;
+  background-color: lighten($color: hsl(0, 0%, 4%), $amount: 15);
+
+  h5 {
+    @include fontTitle(19px, normal, white);
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .wrapper {
+    padding-left: 20px;
+
+    ul {
+      list-style: none;
+
+      margin: 0;
+
+      padding-left: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    a {
+      @include fontText(17px, normal, white);
+    }
+
+    .propose {
+      &__icon {
+        font-size: 13px;
+        margin-right: 15px;
+      }
+    }
+
+    .partner {
+      &__icon {
+        font-size: 13px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
