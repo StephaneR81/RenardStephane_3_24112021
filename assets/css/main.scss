@@ -401,3 +401,56 @@ footer {
     }
   }
 }
+
+//============================================================================
+//= TABLET VERSION FROM 768PX TO 1024PX ======================================
+//============================================================================
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restaurants {
+    .wrapper-cards {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      a {
+        display: block;
+        width: 48%;
+        margin: 20px 0;
+      }
+
+      figure {
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+}
+
+//============================================================================
+//= DESKTOP VERSION SUPERIOR TO 1024PX =======================================
+//============================================================================
+@media screen and (min-width: 1025px) {
+  aside {
+    .wrapper-steps {
+      flex-direction: row;
+      justify-content: space-between;
+
+      a {
+        width: 31%;
+      }
+    }
+  }
+
+  .restaurants {
+    width: 100%;
+    .wrapper-cards {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+    a {
+      width: 48%;
+    }
+  }
+}
