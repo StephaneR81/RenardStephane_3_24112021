@@ -78,10 +78,15 @@ h2 {
 }
 
 h3 {
+  @include fontFamilyRoboto(20px);
 }
 
-h4{
+h4 {
+  @include fontFamilyRoboto(18px);
+}
 
+h5 {
+  @include fontFamilyShrikhand(18px);
 }
 
 .header-wrapper {
