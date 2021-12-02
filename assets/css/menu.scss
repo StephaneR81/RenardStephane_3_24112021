@@ -78,15 +78,15 @@ h2 {
 }
 
 h3 {
-  @include fontFamilyRoboto(20px);
+  @include fontText(18px, normal, $color-black);
 }
 
 h4 {
-  @include fontFamilyRoboto(18px);
+  @include fontText(18px, bold, $color-black);
 }
 
 h5 {
-  @include fontFamilyShrikhand(18px);
+  @include fontTitle(18px, normal, white);
 }
 
 .header-wrapper {
@@ -144,4 +144,15 @@ figure {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
+
+  i {
+    font-size: 25px;
+  }
+}
+
+.dish-card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
