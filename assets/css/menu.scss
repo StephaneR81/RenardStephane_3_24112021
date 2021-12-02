@@ -78,7 +78,23 @@ h2 {
 }
 
 h3 {
-  @include fontText(18px, normal, $color-black);
+  position: relative;
+  @include fontText(17px, normal, $color-black);
+
+  margin: 0;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 25px;
+
+    width: 45px;
+    height: 4px;
+
+    content: "";
+
+    background-color: $tertiary;
+  }
 }
 
 h4 {
@@ -86,7 +102,7 @@ h4 {
 }
 
 h5 {
-  @include fontTitle(18px, normal, white);
+  @include fontTitle(17px, normal, white);
 }
 
 .header-wrapper {
