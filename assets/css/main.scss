@@ -8,7 +8,6 @@ $tertiary: #99e2d0;
 
 $color-black: black;
 $color-grey: grey;
-
 $color-bg-location: linear-gradient(
   180deg,
   rgb(197, 196, 196) 0%,
@@ -67,6 +66,7 @@ h1 {
   @include fontTitle(31px, bold, $color-black);
 
   width: 100%;
+  height: 45px;
 
   text-align: center;
 
