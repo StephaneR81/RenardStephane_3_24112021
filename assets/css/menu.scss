@@ -7,7 +7,6 @@ $secondary: #ff79da;
 $tertiary: #99e2d0;
 
 $color-black: black;
-$color-grey: grey;
 
 $color-bg-location: linear-gradient(
   180deg,
@@ -17,8 +16,9 @@ $color-bg-location: linear-gradient(
 
 $button-bg: linear-gradient(355deg, $primary 1%, $secondary 100%);
 $grey-bg: rgba(128, 128, 128, 0.062);
-$shadow-color: rgba(128, 128, 128, 0.411);
 $post-it-color: rgb(73, 150, 96);
+$color-grey: hsl(0, 1%, 42%);
+$shadowColor: $color-grey;
 
 //MIXINS
 
@@ -54,6 +54,15 @@ $post-it-color: rgb(73, 150, 96);
   text-overflow: ellipsis;
 }
 
+@mixin boxShadow {
+  box-shadow: 1px 1px 10px 2px $shadowColor;
+}
+
+@mixin buttonHover {
+  box-shadow: 1px 1px 10px 2px darken($shadowColor, 30);
+  filter: brightness(115%);
+}
+
 // HEADER FOR MOBILES < 768PX
 
 * {
@@ -63,7 +72,7 @@ $post-it-color: rgb(73, 150, 96);
 body {
   position: relative;
 
-  min-width: 340px;
+  min-width: 360px;
   margin: 0;
 
   a {
@@ -75,8 +84,6 @@ h1 {
   @include fontTitle(31px, bold, $color-black);
 
   height: 45px;
-
-  margin: 15px 0 4px 60px;
 }
 
 h2 {
@@ -119,9 +126,12 @@ h5 {
 }
 
 .header-wrapper {
+  position: relative;
+
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: center;
 }
 
 nav {
@@ -129,12 +139,15 @@ nav {
 
   a {
     display: block;
+
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
   }
 
   i {
-    margin-left: 20px;
-
-    font-size: 20px;
+    font-size: 25px;
 
     color: $color-black;
   }
@@ -173,7 +186,9 @@ figure {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  padding: 0 20px 0 5px;
 
   i {
     font-size: 25px;
@@ -221,24 +236,23 @@ figure {
   align-items: center;
 }
 .order-button {
-  @include fontText(15px, normal, white);
+  @include fontText(18px, normal, white);
 
   display: block;
 
-  padding: 10px 35px;
+  padding: 12px 22px;
   margin-bottom: 30px;
 
   border-radius: 50px;
 
   background-image: $button-bg;
 
-  box-shadow: 2px 2px 15px -3px $shadow-color;
+  box-shadow: 2px 2px 15px -3px $shadowColor;
 
   transition: 0.5s;
 
   &:hover {
-    box-shadow: 2px 2px 10px 3px $shadow-color;
-    filter: brightness(115%);
+    @include buttonHover;
   }
 }
 
@@ -294,5 +308,42 @@ footer {
         margin-right: 10px;
       }
     }
+  }
+}
+
+//============================================================================
+//= TABLET VERSION FROM 768PX TO 1023PX ======================================
+//============================================================================
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .restaurant-header {
+    justify-content: space-between;
+
+    padding: 0 20px 0 5px;
+  }
+}
+
+//============================================================================
+//= DESKTOP VERSION SUPERIOR TO 1023PX =======================================
+//============================================================================
+@media screen and (min-width: 1024px) and (max-width: 1319px) {
+  .main-wrapper {
+    padding: 15px 10%;
+  }
+
+  .footer-wrapper {
+    margin: 0 8.5%;
+  }
+}
+
+//============================================================================
+//= DESKTOP VERSION SUPERIOR TO 1319PX =======================================
+//============================================================================
+@media screen and (min-width: 1320px) {
+  .main-wrapper {
+    padding: 15px 15%;
+  }
+
+  .footer-wrapper {
+    margin: 0 14%;
   }
 }

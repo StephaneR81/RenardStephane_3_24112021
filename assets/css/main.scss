@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap");
 
 //VARIABLES
+
 $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
 
 $color-black: black;
-$color-grey: grey;
 $color-bg-location: linear-gradient(
   180deg,
   rgb(197, 196, 196) 0%,
@@ -16,8 +16,9 @@ $color-bg-location: linear-gradient(
 
 $button-bg: linear-gradient(355deg, $primary 1%, $secondary 100%);
 $grey-bg: rgba(128, 128, 128, 0.062);
-$shadow-color: rgba(128, 128, 128, 0.411);
 $post-it-color: rgb(73, 150, 96);
+$color-grey: hsl(0, 1%, 42%);
+$shadowColor: $color-grey;
 
 //MIXINS
 
@@ -45,6 +46,19 @@ $post-it-color: rgb(73, 150, 96);
   font-size: $size;
   font-weight: $weight;
   color: $color;
+}
+
+@mixin boxShadow {
+  box-shadow: 1px 1px 10px 2px $shadowColor;
+}
+
+@mixin boxShadowLight {
+  box-shadow: 0 0 13px 0 $shadowColor;
+}
+
+@mixin buttonHover {
+  box-shadow: 1px 1px 10px 2px darken($shadowColor, 30);
+  filter: brightness(115%);
 }
 
 // HEADER FOR MOBILES < 768PX
@@ -131,33 +145,26 @@ h1 {
   }
 
   a {
+    @include fontFamilyRoboto(18px);
+
     display: block;
 
     margin: 0 40px;
-
-    border-radius: 50px;
-  }
-
-  .explore-button {
-    @include fontFamilyRoboto(17px);
-
-    padding: 15px 20px;
+    padding: 13px 23px;
 
     border-radius: 50px;
 
     text-align: center;
-
     color: white;
 
     background-image: $button-bg;
 
-    box-shadow: 2px 2px 15px -3px $shadow-color;
+    @include boxShadow();
 
-    transition: 0.5s;
+    transition: 0.3s;
 
     &:hover {
-      box-shadow: 2px 2px 10px 3px $shadow-color;
-      filter: brightness(115%);
+      @include buttonHover;
     }
   }
 }
@@ -198,6 +205,8 @@ aside {
     margin-bottom: 50px;
 
     &__step {
+      @include boxShadowLight();
+
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -211,8 +220,6 @@ aside {
       padding-right: 50px;
 
       background-color: $grey-bg;
-
-      box-shadow: 5px 5px 20px 1px $shadow-color;
 
       ul {
         display: flex;
@@ -295,9 +302,9 @@ aside {
       right: 13px;
 
       margin: 0;
-      padding: 8px 13px;
+      padding: 5px 13px;
 
-      border-radius: 5px;
+      border-radius: 3px;
 
       background-color: $tertiary;
       color: $post-it-color;
@@ -310,14 +317,14 @@ aside {
 
       border-radius: 20px;
 
-      box-shadow: 2px 2px 10px 1px $shadow-color;
+      box-shadow: 2px 2px 10px 1px $shadowColor;
 
       img {
         width: 100%;
         min-width: 100%;
 
-        height: 150px;
-        min-height: 150px;
+        height: 140px;
+        min-height: 140px;
 
         border-radius: 20px 20px 0 0;
 
@@ -458,7 +465,7 @@ footer {
 }
 
 //============================================================================
-//= DESKTOP VERSION SUPERIOR TO 1320PX =======================================
+//= DESKTOP VERSION SUPERIOR TO 1319PX =======================================
 //============================================================================
 @media screen and (min-width: 1320px) {
   aside {
@@ -501,5 +508,10 @@ footer {
 
       width: 48%;
     }
+  }
+  //***
+
+  .footer-wrapper {
+    margin: 0 8%;
   }
 }
