@@ -77,25 +77,24 @@ h1 {
   align-items: center;
 }
 
-header {
-  nav {
-    width: fit-content;
-    a {
-      display: block;
-    }
+nav {
+  width: fit-content;
 
-    i {
-      margin-left: 20px;
-
-      font-size: 20px;
-
-      color: $color-black;
-    }
+  a {
+    display: block;
   }
 
-  figure {
-    margin: 0;
+  i {
+    margin-left: 20px;
+
+    font-size: 20px;
+
+    color: $color-black;
   }
+}
+
+figure {
+  margin: 0;
 
   img {
     display: block;
