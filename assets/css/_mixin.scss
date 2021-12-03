@@ -51,10 +51,12 @@
 @mixin buttonHover {
   box-shadow: 2px 2px 13px 1px darken($shadowColor, 2);
   filter: brightness(115%);
+  cursor: pointer;
 }
 
 @mixin stepHover() {
   background: lighten($secondary, 22);
+  cursor: pointer;
 
   .icon {
     color: $primary;
