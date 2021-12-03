@@ -1,10 +1,12 @@
 @import "./variables";
-@import "./mixin";
 
 //GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap");
 
 // HEADER FOR MOBILES < 768PX
+
+//LOADER SPINNER ANIMATION FOR HOME PAGE
+@include loader();
 
 * {
   box-sizing: border-box;
@@ -169,7 +171,9 @@ aside {
 
       background-color: $grey-bg;
 
-      &:hover{
+      transition: 0.5s;
+
+      &:hover {
         @include stepHover();
       }
 
@@ -293,11 +297,13 @@ aside {
           margin: 0;
           margin-bottom: 5px;
         }
+
         p {
           @include fontText(17px, normal, $color-black);
           margin: 0;
           margin-bottom: 5px;
         }
+
         i {
           align-self: center;
 
@@ -314,7 +320,7 @@ aside {
 
 footer {
   padding: 20px 5px;
-  background-color: lighten($color: hsl(0, 0%, 4%), $amount: 15);
+  background-color: $colorFooter;
 
   h5 {
     @include fontTitle(19px, normal, white);

@@ -1,5 +1,4 @@
 @import "./variables";
-@import "./mixin";
 
 //GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap");
@@ -210,7 +209,7 @@ footer {
 
   padding: 20px 5px;
 
-  background-color: lighten($color: hsl(0, 0%, 4%), $amount: 15);
+  background-color: $colorFooter;
 
   h5 {
     @include fontTitle(19px, normal, white);

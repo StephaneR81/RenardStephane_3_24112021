@@ -4,6 +4,11 @@ $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
 
+$colorFooter: lighten(
+  $color: hsl(0, 0%, 4%),
+  $amount: 15,
+);
+
 $color-black: black;
 $color-bg-location: linear-gradient(
   180deg,
@@ -16,4 +21,199 @@ $grey-bg: rgba(128, 128, 128, 0.062);
 $post-it-color: rgb(73, 150, 96);
 $color-grey: hsl(0, 1%, 42%);
 $shadowColor: $color-grey;
-$card-bg:#e7e5e5;
+$card-bg: #e7e5e5;
+
+//MIXINS
+
+@mixin fontFamilyRoboto($size) {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $size;
+}
+
+@mixin fontFamilyShrikhand($size) {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: $size;
+}
+
+//TITLES FONT SHRIKHAND
+@mixin fontTitle($size, $weight, $color) {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+//TEXTS FONT ROBOTO
+@mixin fontText($size, $weight, $color) {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin textEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin boxShadow {
+  box-shadow: 1px 1px 10px 2px $shadowColor;
+}
+
+@mixin boxShadowLight {
+  box-shadow: 0 0 13px 0 $shadowColor;
+}
+
+@mixin buttonShadow {
+  box-shadow: 1px 1px 10px 2px rgba(128, 128, 128, 0.493);
+}
+
+@mixin buttonTransition {
+  transition: 0.5s;
+}
+
+@mixin buttonHover {
+  box-shadow: 2px 2px 13px 1px darken($shadowColor, 2);
+  filter: brightness(115%);
+  cursor: pointer;
+}
+
+@mixin stepHover {
+  background: lighten($secondary, 22);
+
+  .icon {
+    color: $primary;
+  }
+}
+
+@mixin loader {
+  //LOADER CREATION
+  .screen {
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(202, 219, 212, 0.425);
+
+    animation: hideMe 3s linear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+
+    &__loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 1;
+
+      border: 20px solid $primary;
+      border-top: 20px solid $secondary;
+      border-bottom: 20px solid $secondary;
+
+      border-radius: 50%;
+
+      width: 100px;
+      height: 100px;
+
+      //ANIMATION
+      animation: spin 5s linear;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+
+        border-radius: 50%;
+        padding: 35px;
+        background: white;
+
+        width: 40px;
+        height: 40px;
+
+        animation: utensils 3s normal forwards;
+        animation-duration: 2s;
+      }
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      border-top-color: $tertiary;
+    }
+
+    25% {
+      border-color: $tertiary;
+    }
+    50% {
+      border-color: $primary;
+    }
+
+    75% {
+      border-color: $tertiary;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border-bottom-color: $secondary;
+    }
+  }
+
+  @keyframes utensils {
+    0% {
+      opacity: 0;
+      background: white;
+      font-size: 0;
+      color: $secondary;
+      padding: 40px;
+    }
+    25% {
+      opacity: 0.25;
+      font-size: 0px;
+      color: $primary;
+      background: $tertiary;
+      padding: 35px;
+    }
+    50% {
+      opacity: 0.5;
+      color: $tertiary;
+      background: $tertiary;
+      padding: 40px;
+    }
+    75% {
+      opacity: 0.75;
+      color: $primary;
+      background: $tertiary;
+      padding: 35px;
+    }
+    100% {
+      opacity: 1;
+      font-size: 40px;
+      color: $post-it-color;
+      background: $tertiary;
+      border-color: $tertiary;
+    }
+  }
+
+  @keyframes hideMe {
+    from {
+      visibility: visible;
+    }
+    to {
+      visibility: hidden;
+    }
+  }
+}
