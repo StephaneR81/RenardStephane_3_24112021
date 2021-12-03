@@ -75,7 +75,8 @@ $card-bg: #e7e5e5;
 
 @mixin buttonHover {
   box-shadow: 2px 2px 13px 1px darken($shadowColor, 2);
-  filter: brightness(115%);
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
   cursor: pointer;
 }
 
@@ -104,9 +105,13 @@ $card-bg: #e7e5e5;
 
     background: rgba(202, 219, 212, 0.425);
 
-    animation: hideMe 3s linear;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+    -webkit-animation: hideMe 3s linear;
+
+            animation: hideMe 3s linear;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 
     &__loader {
       display: flex;
@@ -125,9 +130,12 @@ $card-bg: #e7e5e5;
       height: 100px;
 
       //ANIMATION
-      animation: spin 5s linear;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
+      -webkit-animation: spin 5s linear;
+              animation: spin 5s linear;
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
 
       i {
         display: flex;
@@ -143,9 +151,35 @@ $card-bg: #e7e5e5;
         width: 40px;
         height: 40px;
 
-        animation: utensils 3s normal forwards;
-        animation-duration: 2s;
+        -webkit-animation: utensils 3s normal forwards;
+
+                animation: utensils 3s normal forwards;
+        -webkit-animation-duration: 2s;
+                animation-duration: 2s;
       }
+    }
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      border-top-color: $tertiary;
+    }
+
+    25% {
+      border-color: $tertiary;
+    }
+    50% {
+      border-color: $primary;
+    }
+
+    75% {
+      border-color: $tertiary;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border-bottom-color: $secondary;
     }
   }
 
@@ -169,6 +203,42 @@ $card-bg: #e7e5e5;
     100% {
       transform: rotate(360deg);
       border-bottom-color: $secondary;
+    }
+  }
+
+  @-webkit-keyframes utensils {
+    0% {
+      opacity: 0;
+      background: white;
+      font-size: 0;
+      color: $secondary;
+      padding: 40px;
+    }
+    25% {
+      opacity: 0.25;
+      font-size: 0px;
+      color: $primary;
+      background: $tertiary;
+      padding: 35px;
+    }
+    50% {
+      opacity: 0.5;
+      color: $tertiary;
+      background: $tertiary;
+      padding: 40px;
+    }
+    75% {
+      opacity: 0.75;
+      color: $primary;
+      background: $tertiary;
+      padding: 35px;
+    }
+    100% {
+      opacity: 1;
+      font-size: 40px;
+      color: $post-it-color;
+      background: $tertiary;
+      border-color: $tertiary;
     }
   }
 
@@ -205,6 +275,15 @@ $card-bg: #e7e5e5;
       color: $post-it-color;
       background: $tertiary;
       border-color: $tertiary;
+    }
+  }
+
+  @-webkit-keyframes hideMe {
+    from {
+      visibility: visible;
+    }
+    to {
+      visibility: hidden;
     }
   }
 

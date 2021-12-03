@@ -70,6 +70,8 @@ h5 {
 }
 
 nav {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 
   a {
@@ -101,7 +103,9 @@ figure {
     height: 300px;
     min-height: 300px;
 
-    object-fit: cover;
+    -o-object-fit: cover;
+
+       object-fit: cover;
   }
 }
 
