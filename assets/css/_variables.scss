@@ -76,7 +76,7 @@ $card-bg: #e7e5e5;
 @mixin buttonHover {
   box-shadow: 2px 2px 13px 1px darken($shadowColor, 2);
   -webkit-filter: brightness(115%);
-          filter: brightness(115%);
+  filter: brightness(115%);
   cursor: pointer;
 }
 
@@ -107,11 +107,11 @@ $card-bg: #e7e5e5;
 
     -webkit-animation: hideMe 3s linear;
 
-            animation: hideMe 3s linear;
+    animation: hideMe 3s linear;
     -webkit-animation-duration: 3s;
-            animation-duration: 3s;
+    animation-duration: 3s;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
     &__loader {
       display: flex;
@@ -131,11 +131,11 @@ $card-bg: #e7e5e5;
 
       //ANIMATION
       -webkit-animation: spin 5s linear;
-              animation: spin 5s linear;
+      animation: spin 5s linear;
       -webkit-animation-duration: 2s;
-              animation-duration: 2s;
+      animation-duration: 2s;
       -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
 
       i {
         display: flex;
@@ -153,9 +153,9 @@ $card-bg: #e7e5e5;
 
         -webkit-animation: utensils 3s normal forwards;
 
-                animation: utensils 3s normal forwards;
+        animation: utensils 3s normal forwards;
         -webkit-animation-duration: 2s;
-                animation-duration: 2s;
+        animation-duration: 2s;
       }
     }
   }
@@ -294,5 +294,19 @@ $card-bg: #e7e5e5;
     to {
       visibility: hidden;
     }
+  }
+}
+
+//HEART HOVER ANIMATION
+@mixin heartHover {
+  .fa-heart::before {
+    font-weight: normal;
+    transition: font-weight 0.5s ease-in;
+    transition: color 0.3s ease-in-out;
+  }
+  .fa-heart:hover::before {
+    color: darken($secondary, 30);
+    cursor: pointer;
+    font-weight: bold;
   }
 }
