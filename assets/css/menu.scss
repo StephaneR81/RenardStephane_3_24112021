@@ -19,6 +19,7 @@ $grey-bg: rgba(128, 128, 128, 0.062);
 $post-it-color: rgb(73, 150, 96);
 $color-grey: hsl(0, 1%, 42%);
 $shadowColor: $color-grey;
+$card-bg: #e7e5e5;
 
 //MIXINS
 
@@ -70,8 +71,6 @@ $shadowColor: $color-grey;
 }
 
 body {
-  position: relative;
-
   min-width: 360px;
   margin: 0;
 
@@ -91,6 +90,7 @@ h2 {
 }
 
 h3 {
+  //::after position (green title underline) is relative to H3 position
   position: relative;
 
   @include fontText(17px, normal, $color-black);
@@ -126,8 +126,6 @@ h5 {
 }
 
 .header-wrapper {
-  position: relative;
-
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -157,6 +155,9 @@ figure {
   margin: 0;
 
   img {
+    // .restaurant-header position is relative to this picture.
+    position: relative;
+
     display: block;
 
     width: 100%;
@@ -170,23 +171,30 @@ figure {
 //DISHES CARD SECTION
 
 .main-wrapper {
-  position: absolute;
+  // position: absolute;
 
   top: 300px;
 
   width: 100%;
   padding: 15px;
 
-  border-radius: 40px 40px 0 0;
-
   background: rgb(231, 229, 229);
 }
 
 .restaurant-header {
+  position: absolute;
+  top: 300px;
+
+  width: 100%;
+
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+
+  background: $card-bg;
+
+  border-radius: 40px 40px 0 0;
 
   padding: 0 20px 0 5px;
 
@@ -258,9 +266,6 @@ figure {
 
 //FOOTER MOBILES < 768PX
 footer {
-  position: absolute;
-  top: 1500px;
-  z-index: 1;
 
   width: 100%;
 
