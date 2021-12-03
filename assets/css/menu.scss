@@ -171,8 +171,6 @@ figure {
 //DISHES CARD SECTION
 
 .main-wrapper {
-  // position: absolute;
-
   top: 300px;
 
   width: 100%;
@@ -206,8 +204,8 @@ figure {
 .cards-wrapper {
   margin-bottom: 40px;
 }
+
 .dish-card {
-  @include textEllipsis;
   @include fontFamilyRoboto(inherit);
 
   display: flex;
@@ -229,8 +227,7 @@ figure {
 
 .dish-content {
   p {
-    @include textEllipsis;
-
+    width: max-content;
     margin: 0;
 
     color: black;
@@ -266,7 +263,6 @@ figure {
 
 //FOOTER MOBILES < 768PX
 footer {
-
   width: 100%;
 
   padding: 20px 5px;
@@ -323,7 +319,7 @@ footer {
   .restaurant-header {
     justify-content: space-between;
 
-    padding: 0 20px 0 5px;
+    padding: 0 20px 0 20px;
   }
 }
 
@@ -333,6 +329,15 @@ footer {
 @media screen and (min-width: 1024px) and (max-width: 1319px) {
   .main-wrapper {
     padding: 15px 10%;
+  }
+
+  .restaurant-header {
+    justify-content: space-between;
+
+    padding: 0 10%;
+    i {
+      margin-right: 20px;
+    }
   }
 
   .footer-wrapper {
@@ -346,6 +351,15 @@ footer {
 @media screen and (min-width: 1320px) {
   .main-wrapper {
     padding: 15px 15%;
+  }
+
+  .restaurant-header {
+    justify-content: space-between;
+
+    padding: 0 15%;
+    i {
+      margin-right: 20px;
+    }
   }
 
   .footer-wrapper {
