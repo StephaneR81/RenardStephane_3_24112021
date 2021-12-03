@@ -1,0 +1,62 @@
+//MIXINS
+
+@mixin fontFamilyRoboto($size) {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $size;
+}
+
+@mixin fontFamilyShrikhand($size) {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: $size;
+}
+
+//TITLES FONT SHRIKHAND
+@mixin fontTitle($size, $weight, $color) {
+  font-family: Shrikhand, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+//TEXTS FONT ROBOTO
+@mixin fontText($size, $weight, $color) {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin textEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin boxShadow {
+  box-shadow: 1px 1px 10px 2px $shadowColor;
+}
+
+@mixin boxShadowLight {
+  box-shadow: 0 0 13px 0 $shadowColor;
+}
+
+@mixin buttonShadow {
+  box-shadow: 1px 1px 10px 2px rgba(128, 128, 128, 0.493);
+}
+
+@mixin buttonTransition() {
+  transition: 0.5s;
+}
+
+@mixin buttonHover {
+  box-shadow: 2px 2px 13px 1px darken($shadowColor, 2);
+  filter: brightness(115%);
+}
+
+@mixin stepHover() {
+  background: lighten($secondary, 22);
+
+  .icon {
+    color: $primary;
+  }
+}

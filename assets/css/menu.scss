@@ -1,68 +1,8 @@
+@import "./variables";
+@import "./mixin";
+
 //GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap");
-
-//VARIABLES
-$primary: #9356dc;
-$secondary: #ff79da;
-$tertiary: #99e2d0;
-
-$color-black: black;
-
-$color-bg-location: linear-gradient(
-  180deg,
-  rgb(197, 196, 196) 0%,
-  rgba(226, 226, 226, 1) 10%
-);
-
-$button-bg: linear-gradient(355deg, $primary 1%, $secondary 100%);
-$grey-bg: rgba(128, 128, 128, 0.062);
-$post-it-color: rgb(73, 150, 96);
-$color-grey: hsl(0, 1%, 42%);
-$shadowColor: $color-grey;
-$card-bg: #e7e5e5;
-
-//MIXINS
-
-@mixin fontFamilyRoboto($size) {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  font-size: $size;
-}
-
-@mixin fontFamilyShrikhand($size) {
-  font-family: Shrikhand, Arial, Helvetica, sans-serif;
-  font-size: $size;
-}
-
-//TITLES FONT SHRIKHAND
-@mixin fontTitle($size, $weight, $color) {
-  font-family: Shrikhand, Arial, Helvetica, sans-serif;
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
-}
-
-//TEXTS FONT ROBOTO
-@mixin fontText($size, $weight, $color) {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
-}
-
-@mixin textEllipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@mixin boxShadow {
-  box-shadow: 1px 1px 10px 2px $shadowColor;
-}
-
-@mixin buttonHover {
-  box-shadow: 1px 1px 10px 2px darken($shadowColor, 30);
-  filter: brightness(115%);
-}
 
 // HEADER FOR MOBILES < 768PX
 
@@ -242,6 +182,7 @@ figure {
   justify-content: center;
   align-items: center;
 }
+
 .order-button {
   @include fontText(18px, normal, white);
 
@@ -252,14 +193,14 @@ figure {
 
   border-radius: 50px;
 
-  background-image: $button-bg;
+  background: $button-bg;
 
-  box-shadow: 2px 2px 15px -3px $shadowColor;
+  @include buttonShadow();
 
-  transition: 0.5s;
+  @include buttonTransition();
 
   &:hover {
-    @include buttonHover;
+    @include buttonHover();
   }
 }
 
