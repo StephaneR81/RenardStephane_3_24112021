@@ -13,6 +13,7 @@
 
 * {
   box-sizing: border-box;
+  cursor: default;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -302,6 +304,7 @@ aside {
 
         object-fit: cover;
       }
+
       figcaption {
         display: flex;
         justify-content: space-between;
@@ -392,7 +395,7 @@ footer {
       flex-flow: row wrap;
       justify-content: space-between;
 
-      a {
+      article {
         display: block;
         width: 48%;
         margin: 20px 0;
@@ -432,7 +435,7 @@ footer {
       flex-flow: row wrap;
       justify-content: space-between;
     }
-    a {
+    article {
       width: 48%;
     }
   }
@@ -477,7 +480,7 @@ footer {
     justify-content: space-between;
 
     width: auto;
-    a {
+    article {
       display: block;
 
       width: 48%;

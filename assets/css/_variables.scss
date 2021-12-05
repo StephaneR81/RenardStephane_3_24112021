@@ -81,6 +81,8 @@ $card-bg: #e7e5e5;
 }
 
 @mixin stepHover {
+  cursor: default;
+
   background: lighten($secondary, 22);
 
   .icon {
@@ -308,7 +310,7 @@ $card-bg: #e7e5e5;
   .fa-heart:hover::before {
     font-weight: bold;
     color: darken($secondary, 35);
-    cursor: normal;
+    cursor: default;
   }
 }
 
