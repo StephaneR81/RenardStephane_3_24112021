@@ -3,7 +3,9 @@
 //GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap");
 
-// HEADER FOR MOBILES < 768PX
+//============================================================================
+//= MOBILE VERSION INFERIOR TO 768PX =========================================
+//============================================================================
 
 //HEART HOVER EFFECT
 @include heartHover();
@@ -19,14 +21,16 @@
 }
 
 body {
+  cursor: default;
+
   min-width: 360px;
+
   margin: 0;
 
   a {
     text-decoration: none;
   }
 }
-
 
 h1 {
   @include fontTitle(28px, normal, $color-black);
@@ -317,7 +321,7 @@ footer {
 }
 
 //============================================================================
-//= DESKTOP VERSION SUPERIOR TO 1023PX =======================================
+//= DESKTOP VERSION SUPERIOR TO 1023PX AND INFERIOR TO 1320PX ================
 //============================================================================
 @media screen and (min-width: 1024px) and (max-width: 1319px) {
   .main-wrapper {
@@ -328,6 +332,7 @@ footer {
     justify-content: space-between;
 
     padding: 0 10%;
+
     i {
       margin-right: 20px;
     }
@@ -350,6 +355,7 @@ footer {
     justify-content: space-between;
 
     padding: 0 15%;
+
     i {
       margin-right: 20px;
     }

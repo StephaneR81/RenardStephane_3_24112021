@@ -13,11 +13,13 @@
 
 * {
   box-sizing: border-box;
-  cursor: default;
 }
 
 body {
+  cursor: default;
+
   min-width: 340px;
+
   margin: 0;
 
   a {
@@ -36,17 +38,6 @@ body {
     margin-bottom: 10px;
   }
 }
-
-// h1 {
-//   @include fontTitle(31px, bold, $color-black);
-
-//   width: 100%;
-//   height: 45px;
-
-//   text-align: center;
-
-//   margin: 15px 0 4px 0;
-// }
 
 .location {
   @include fontText(17px, bold, $color-black);
@@ -283,6 +274,7 @@ aside {
     }
 
     figure {
+      cursor: pointer;
       position: relative;
 
       margin: 16px 0;
@@ -389,6 +381,7 @@ footer {
 //============================================================================
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   .restaurants {
     .wrapper-cards {
       display: flex;
@@ -407,12 +400,18 @@ footer {
       }
     }
   }
+
+  .footer-wrapper {
+    margin-left: 5%;
+  }
 }
 
 //============================================================================
-//= DESKTOP VERSION SUPERIOR TO 1023PX =======================================
+//= DESKTOP VERSION SUPERIOR FROM 1024PX TO 1319PX ===========================
 //============================================================================
 @media screen and (min-width: 1024px) and (max-width: 1319px) {
+
+
   aside {
     .aside-wrapper {
       width: 100%;
@@ -445,11 +444,16 @@ footer {
 //= DESKTOP VERSION SUPERIOR TO 1319PX =======================================
 //============================================================================
 @media screen and (min-width: 1320px) {
+
+
   aside {
-    margin: auto 10%;
+    // margin: auto 10%;
 
     .aside-wrapper {
       width: 100%;
+
+      padding-left: 10%;
+      padding-right: 10%;
     }
 
     .wrapper-steps {
@@ -470,7 +474,8 @@ footer {
 
       width: auto;
 
-      margin: auto 8%;
+     padding-left: 10%;
+     padding-right: 10%;
     }
   }
 
@@ -479,16 +484,16 @@ footer {
     flex-flow: row wrap;
     justify-content: space-between;
 
-    width: auto;
+    margin-left: 10%;
+
     article {
       display: block;
 
       width: 48%;
     }
   }
-  //***
 
   .footer-wrapper {
-    margin: 0 8%;
+    margin: 0 10%;
   }
 }
