@@ -400,6 +400,8 @@ $card-bg: #e7e5e5;
     }
 
     &:hover {
+      cursor: pointer;
+
       .dish-card__check {
         width: 100px;
 
