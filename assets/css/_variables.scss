@@ -88,6 +88,7 @@ $card-bg: #e7e5e5;
   }
 }
 
+//LOADER ANIMATION
 @mixin loader {
   //LOADER CREATION
   .screen {
@@ -300,13 +301,76 @@ $card-bg: #e7e5e5;
 //HEART HOVER ANIMATION
 @mixin heartHover {
   .fa-heart::before {
-    font-weight: normal;
-    transition: font-weight 0.5s ease-in;
-    transition: color 0.3s ease-in-out;
+    // font-weight: unset;
+
+    transition: color 0.6s ease-out;
   }
   .fa-heart:hover::before {
-    color: darken($secondary, 30);
-    cursor: pointer;
     font-weight: bold;
+    color: darken($secondary, 35);
+    cursor: normal;
+  }
+}
+
+//DISH GREEN CHECK ICON ANIMATION
+@mixin dishAnimation {
+  .fa-check-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    font-size: 27px;
+
+    transform: rotate(-360deg);
+    transition: 1s;
+  }
+
+  .dish-card {
+    &__check {
+      transition: all 1s;
+    }
+
+    &:hover {
+      .dish-card__check {
+        width: 100px;
+
+        .fa-check-circle {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}
+
+//GRADUAL APPEARANCE OF DISHES
+@mixin dishAppearing() {
+  .delay1 {
+    animation-delay: 0.3s;
+  }
+  .delay2 {
+    animation-delay: 0.6s;
+  }
+  .delay3 {
+    animation-delay: 0.9s;
+  }
+  .delay4 {
+    animation-delay: 1.2s;
+  }
+
+  .dish-card {
+    opacity: 0;
+    animation-name: appearing;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    @keyframes appearing {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 }

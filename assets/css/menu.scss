@@ -8,6 +8,12 @@
 //HEART HOVER EFFECT
 @include heartHover();
 
+//DISH GREEN CHECK ICON ANIMATION
+@include dishAnimation();
+
+//GRADUAL APPEARANCE OF DISHES
+@include dishAppearing();
+
 * {
   box-sizing: border-box;
 }
@@ -21,17 +27,12 @@ body {
   }
 }
 
+
 h1 {
-  @include fontTitle(31px, bold, $color-black);
-
-  height: 45px;
-}
-
-h2 {
   @include fontTitle(28px, normal, $color-black);
 }
 
-h3 {
+h2 {
   //::after position (green title underline) is relative to H3 position
   position: relative;
 
@@ -54,15 +55,11 @@ h3 {
   }
 }
 
-h4 {
+h3 {
   @include fontText(18px, bold, $color-black);
   @include textEllipsis();
   margin: 0;
   margin-bottom: 5px;
-}
-
-h5 {
-  @include fontTitle(17px, normal, white);
 }
 
 .header-wrapper {
@@ -70,6 +67,17 @@ h5 {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+}
+
+.header__img {
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
 
 nav {
@@ -82,7 +90,7 @@ nav {
 
     position: absolute;
 
-    top: 30px;
+    top: 20px;
     left: 30px;
   }
 
@@ -148,6 +156,13 @@ figure {
 
 .cards-wrapper {
   margin-bottom: 40px;
+
+  a {
+    display: block;
+
+    height: 76px;
+    min-height: 76px;
+  }
 }
 
 .dish-card {
@@ -158,27 +173,56 @@ figure {
   align-items: flex-end;
   justify-content: space-between;
 
+  overflow: hidden;
+
+  height: 100%;
+
   background-color: white;
 
   border-radius: 20px;
 
   margin-top: 15px;
-  padding: 15px;
 
-  strong {
-    color: black;
+  &__content {
+    min-width: 0;
+    padding: 15px;
+
+    p {
+      @include textEllipsis();
+
+      margin: 0;
+
+      color: black;
+    }
   }
-}
 
-.dish-content {
-  min-width: 0;
-
-  p {
-    @include textEllipsis();
-
-    margin: 0;
-
+  &__price {
     color: black;
+    padding: 15px;
+  }
+
+  &__priceAndCheck {
+    display: flex;
+    justify-self: flex-end;
+    align-items: flex-end;
+
+    height: 100%;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 0 20px 20px 0;
+
+    font-size: 20px;
+
+    background-color: $tertiary;
+    color: white;
   }
 }
 
@@ -218,7 +262,7 @@ footer {
 
   background-color: $colorFooter;
 
-  h5 {
+  h4 {
     @include fontTitle(19px, normal, white);
 
     margin-top: 0px;

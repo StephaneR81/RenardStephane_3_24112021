@@ -7,6 +7,8 @@
 
 //LOADER SPINNER ANIMATION FOR HOME PAGE
 @include loader();
+
+//HEART PROGRESSIVE FILLING ANIMATION
 @include heartHover();
 
 * {
@@ -22,16 +24,27 @@ body {
   }
 }
 
-h1 {
-  @include fontTitle(31px, bold, $color-black);
+.header__img {
+  display: flex;
+  justify-content: center;
 
-  width: 100%;
-  height: 45px;
-
-  text-align: center;
-
-  margin: 15px 0 4px 0;
+  img {
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
+
+// h1 {
+//   @include fontTitle(31px, bold, $color-black);
+
+//   width: 100%;
+//   height: 45px;
+
+//   text-align: center;
+
+//   margin: 15px 0 4px 0;
+// }
 
 .location {
   @include fontText(17px, bold, $color-black);
@@ -69,7 +82,7 @@ h1 {
 
   background-color: $grey-bg;
 
-  h2 {
+  h1 {
     @include fontFamilyRoboto(24px);
 
     margin: 0;
@@ -138,7 +151,7 @@ aside {
     width: 100%;
   }
 
-  h3 {
+  h2 {
     align-self: flex-start;
 
     @include fontFamilyRoboto(23px);
@@ -230,7 +243,7 @@ aside {
 
   background-color: $grey-bg;
 
-  h3 {
+  h2 {
     @include fontFamilyRoboto(23px);
     margin-left: 20px;
     margin-top: 50px;
@@ -295,7 +308,7 @@ aside {
 
         padding: 10px 15px;
 
-        h4 {
+        h3 {
           @include fontText(18px, bold, $color-black);
           margin: 0;
           margin-bottom: 5px;
@@ -325,7 +338,7 @@ footer {
   padding: 20px 5px;
   background-color: $colorFooter;
 
-  h5 {
+  h4 {
     @include fontTitle(19px, normal, white);
 
     margin-top: 0px;
