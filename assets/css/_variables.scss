@@ -441,7 +441,10 @@ $card-bg: #e7e5e5;
   }
 
   .dish-card {
+    position: relative;
+
     opacity: 0;
+
     -webkit-animation-name: appearing;
     animation-name: appearing;
     -webkit-animation-duration: 2s;
@@ -460,9 +463,11 @@ $card-bg: #e7e5e5;
 
     @keyframes appearing {
       from {
+        top: 15px;
         opacity: 0;
       }
       to {
+        top: 0;
         opacity: 1;
       }
     }
