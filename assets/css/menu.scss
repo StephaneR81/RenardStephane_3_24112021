@@ -1,7 +1,7 @@
 @import "./variables";
 
 //GOOGLE FONTS
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 
 //============================================================================
 //= MOBILE VERSION INFERIOR TO 768PX =========================================
@@ -43,7 +43,7 @@ h2 {
   @include fontText(17px, normal, $color-black);
 
   margin: 0;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 
   &::after {
     position: absolute;
@@ -109,7 +109,6 @@ figure {
   margin: 0;
 
   img {
-    // .restaurant-header position is relative to this picture.
     position: relative;
 
     display: block;
@@ -118,8 +117,6 @@ figure {
     height: 300px;
     min-height: 300px;
 
-    -o-object-fit: cover;
-
     object-fit: cover;
   }
 }
@@ -127,8 +124,6 @@ figure {
 //DISHES CARD SECTION
 
 .main-wrapper {
-  top: 300px;
-
   width: 100%;
   padding: 15px;
 
@@ -200,7 +195,6 @@ figure {
 
   &__priceAndCheck {
     display: flex;
-    justify-self: flex-end;
     align-items: flex-end;
 
     height: 76px;
@@ -302,16 +296,7 @@ footer {
   }
 }
 
-//============================================================================
-//= TABLET VERSION FROM 768PX TO 1023PX ======================================
-//============================================================================
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .restaurant-header {
-    justify-content: space-between;
-
-    padding: 0 34px 0 20px;
-  }
-}
+// TABLET VERSION IS SIMILAR TO MOBILE
 
 //============================================================================
 //= DESKTOP VERSION SUPERIOR TO 1023PX AND INFERIOR TO 1320PX ================
@@ -345,8 +330,6 @@ footer {
   }
 
   .restaurant-header {
-    justify-content: space-between;
-
     padding: 0 15%;
 
     i {

@@ -94,7 +94,6 @@ $card-bg: #e7e5e5;
 @mixin loader {
   //LOADER CREATION
   .screen {
-    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;

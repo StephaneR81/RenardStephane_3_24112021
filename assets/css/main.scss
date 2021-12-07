@@ -1,7 +1,7 @@
 @import "./variables";
 
 //GOOGLE FONTS
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 // HEADER FOR MOBILES < 768PX
 
 //LOADER SPINNER ANIMATION FOR HOME PAGE
@@ -144,8 +144,6 @@ aside {
   }
 
   h2 {
-    align-self: flex-start;
-
     @include fontFamilyRoboto(23px);
 
     font-weight: bold;
@@ -400,12 +398,7 @@ footer {
       }
 
       i {
-        position: absolute;
-        z-index: 1;
-        right: 15px;
         bottom: 38px;
-
-        font-size: 28px;
       }
 
       figure {
@@ -447,12 +440,7 @@ footer {
       justify-content: space-between;
 
       i {
-        position: absolute;
-        z-index: 1;
-        right: 15px;
         bottom: 38px;
-
-        font-size: 28px;
       }
     }
 
@@ -470,15 +458,12 @@ footer {
     // margin: auto 10%;
 
     .aside-wrapper {
-      width: 100%;
-
       padding-left: 10%;
       padding-right: 10%;
     }
 
     .wrapper-steps {
       flex-flow: row nowrap;
-      align-items: center;
       justify-content: space-between;
 
       &__step {
