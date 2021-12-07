@@ -400,6 +400,15 @@ footer {
         margin: 20px 0;
       }
 
+      i {
+        position: absolute;
+        z-index: 1;
+        right: 15px;
+        bottom: 38px;
+
+        font-size: 28px;
+      }
+
       figure {
         display: block;
         margin: 0;
@@ -437,7 +446,17 @@ footer {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
+
+      i {
+        position: absolute;
+        z-index: 1;
+        right: 15px;
+        bottom: 38px;
+
+        font-size: 28px;
+      }
     }
+
     article {
       width: 48%;
     }
@@ -478,6 +497,17 @@ footer {
 
       padding-left: 10%;
       padding-right: 10%;
+    }
+
+    .wrapper-cards {
+      i {
+        position: absolute;
+        z-index: 1;
+        right: 15px;
+        bottom: 38px;
+
+        font-size: 28px;
+      }
     }
   }
 
