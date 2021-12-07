@@ -247,6 +247,21 @@ aside {
     margin: 0 20px;
     padding-bottom: 50px;
 
+    article {
+      position: relative;
+    }
+
+    i {
+      position: absolute;
+
+      z-index: 1;
+
+      right: 15px;
+      bottom: 20px;
+
+      font-size: 28px;
+    }
+
     a {
       display: block;
 
@@ -314,14 +329,6 @@ aside {
           margin: 0;
           margin-bottom: 5px;
         }
-
-        i {
-          align-self: center;
-
-          font-size: 28px;
-
-          color: $color-black;
-        }
       }
     }
   }
@@ -381,7 +388,6 @@ footer {
 //============================================================================
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   .restaurants {
     .wrapper-cards {
       display: flex;
@@ -410,8 +416,6 @@ footer {
 //= DESKTOP VERSION SUPERIOR FROM 1024PX TO 1319PX ===========================
 //============================================================================
 @media screen and (min-width: 1024px) and (max-width: 1319px) {
-
-
   aside {
     .aside-wrapper {
       width: 100%;
@@ -444,8 +448,6 @@ footer {
 //= DESKTOP VERSION SUPERIOR TO 1319PX =======================================
 //============================================================================
 @media screen and (min-width: 1320px) {
-
-
   aside {
     // margin: auto 10%;
 
@@ -474,8 +476,8 @@ footer {
 
       width: auto;
 
-     padding-left: 10%;
-     padding-right: 10%;
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
 
