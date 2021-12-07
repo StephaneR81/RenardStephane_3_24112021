@@ -370,13 +370,21 @@ $card-bg: #e7e5e5;
 //HEART HOVER ANIMATION
 @mixin heartHover {
   .fa-heart::before {
-    transition: color 0.6s ease-out;
+    font-weight: normal;
+    transition: 0.6s ease-out;
   }
+
   .fa-heart:hover::before {
-    font-weight: bold;
-    // color: darken($secondary, 35);
-    color: darken(adjust-hue($color: $secondary, $degrees: 1deg), 38);
     cursor: default;
+
+    font-weight: bold;
+
+    background: $button-bg;
+    background-clip: text;
+
+    background: -webkit-linear-gradient($primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
