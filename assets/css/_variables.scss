@@ -370,11 +370,18 @@ $card-bg: #e7e5e5;
 @mixin heartHover {
   .heart-wrapper {
     width: 28px;
-    height: 28px;
+    height: auto;
 
     position: relative;
+
     &.menu {
       transform: translateX(-18px);
+    }
+
+    &.home {
+      position: absolute;
+      top: 155px;
+      right: 30px;
     }
   }
 
