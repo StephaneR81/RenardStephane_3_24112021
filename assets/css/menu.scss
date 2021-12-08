@@ -34,6 +34,8 @@ body {
 
 h1 {
   @include fontTitle(28px, normal, $color-black);
+  
+  margin-left: 10px;
 }
 
 h2 {
