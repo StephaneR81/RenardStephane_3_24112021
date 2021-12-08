@@ -246,6 +246,7 @@ aside {
 
     article {
       position: relative;
+      // height: 220px;
     }
 
     i {
@@ -321,6 +322,12 @@ aside {
         }
       }
     }
+  }
+
+  .heart-wrapper.home {
+    position: absolute;
+    top: 155px;
+    right: 30px;
   }
 }
 
@@ -401,6 +408,12 @@ footer {
     }
   }
 
+  .heart-wrapper.home {
+    position: absolute;
+    top: 155px;
+    right: 30px;
+  }
+
   .footer-wrapper {
     margin-left: 5%;
   }
@@ -439,6 +452,12 @@ footer {
 
     article {
       width: 48%;
+    }
+
+    .heart-wrapper.home {
+      position: absolute;
+      top: 170px;
+      right: 30px;
     }
   }
 }
@@ -489,6 +508,12 @@ footer {
       i {
         bottom: 38px;
       }
+    }
+
+    .heart-wrapper.home {
+      position: absolute;
+      top: 170px;
+      right: 30px;
     }
   }
 
