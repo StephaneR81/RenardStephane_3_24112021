@@ -368,22 +368,75 @@ $card-bg: #e7e5e5;
 
 //HEART HOVER ANIMATION
 @mixin heartHover {
-  .fa-heart::before {
-    font-weight: normal;
-    transition: 0.6s ease-out;
+  .heart-wrapper {
+    width: 28px;
+    height: 28px;
+
+    position: relative;
+    &.menu {
+      transform: translateX(-18px);
+    }
   }
 
-  .fa-heart:hover::before {
-    cursor: default;
+  .fa-heart {
+    width: 28px;
+    height: 28px;
 
-    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .far.fa-heart {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+
+    background: white;
+
+    color: black;
+
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      background: transparent;
+
+      color: transparent;
+    }
+
+    &.menu {
+      background: #e7e5e5;
+
+      &:hover {
+        background: transparent;
+
+        color: transparent;
+      }
+    }
+  }
+
+  .fas.fa-heart {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: transparent;
 
     background: $button-bg;
+
+    -webkit-background-clip: text;
+
     background-clip: text;
 
-    background: -webkit-linear-gradient($primary, $secondary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    &.menu {
+      color: transparent;
+
+      background: $button-bg;
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+    }
   }
 }
 
@@ -462,7 +515,7 @@ $card-bg: #e7e5e5;
 
     @keyframes appearing {
       from {
-        top: 15px;
+        top: 20px;
         opacity: 0;
       }
       to {

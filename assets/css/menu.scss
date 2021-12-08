@@ -43,7 +43,8 @@ h2 {
   @include fontText(17px, normal, $color-black);
 
   margin: 0;
-  // margin-bottom: 20px;
+  margin-left: 8px;
+  margin-bottom: 25px;
 
   &::after {
     position: absolute;
@@ -117,7 +118,9 @@ figure {
     height: 300px;
     min-height: 300px;
 
-    object-fit: cover;
+    -o-object-fit: cover;
+
+       object-fit: cover;
   }
 }
 
@@ -146,11 +149,8 @@ figure {
 
   border-radius: 40px 40px 0 0;
 
-  padding: 0 34px 0 20px;
-
-  i {
-    font-size: 28px;
-  }
+  // padding: 0 34px 0 20px;
+  padding: 0 15px;
 }
 
 .cards-wrapper {
@@ -171,7 +171,7 @@ figure {
 
   background-color: white;
 
-  border-radius: 20px;
+  border-radius: 15px;
 
   margin-top: 15px;
 
@@ -208,7 +208,7 @@ figure {
     width: 0;
     height: 100%;
 
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 15px 15px 0;
 
     font-size: 20px;
 
@@ -258,12 +258,13 @@ footer {
 
     margin-top: 0px;
     margin-bottom: 10px;
-    padding-left: 20px;
+  }
+
+  .footer-wrapper {
+    padding-left: 15px;
   }
 
   .wrapper {
-    padding-left: 20px;
-
     ul {
       list-style: none;
 
@@ -296,7 +297,26 @@ footer {
   }
 }
 
-// TABLET VERSION IS SIMILAR TO MOBILE
+//============================================================================
+//= TABLET VERSION SUPERIOR TO 767PX AND INFERIOR TO 1024PX ================
+//============================================================================
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .restaurant-header {
+    padding: 0 10%;
+  }
+
+  .header-wrapper {
+    right: 73px;
+  }
+
+  .main-wrapper {
+    padding: 15px 10%;
+  }
+
+  .footer-wrapper {
+    margin: 0 8.5%;
+  }
+}
 
 //============================================================================
 //= DESKTOP VERSION SUPERIOR TO 1023PX AND INFERIOR TO 1320PX ================
@@ -307,12 +327,10 @@ footer {
   }
 
   .restaurant-header {
-    justify-content: space-between;
-
     padding: 0 10%;
 
     i {
-      margin-right: 20px;
+      margin-right: 85px;
     }
   }
 

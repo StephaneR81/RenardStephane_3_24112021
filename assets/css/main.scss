@@ -249,14 +249,7 @@ aside {
     }
 
     i {
-      position: absolute;
-
-      z-index: 1;
-
-      right: 15px;
       bottom: 20px;
-
-      font-size: 28px;
     }
 
     a {
@@ -482,30 +475,20 @@ footer {
       padding-left: 10%;
       padding-right: 10%;
     }
-
     .wrapper-cards {
-      i {
-        position: absolute;
-        z-index: 1;
-        right: 15px;
-        bottom: 38px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
 
-        font-size: 28px;
+      article {
+        display: block;
+
+        width: 48%;
       }
-    }
-  }
 
-  .wrapper-cards {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-    margin-left: 10%;
-
-    article {
-      display: block;
-
-      width: 48%;
+      i {
+        bottom: 38px;
+      }
     }
   }
 
