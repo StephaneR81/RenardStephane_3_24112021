@@ -413,10 +413,6 @@ footer {
     top: 155px;
     right: 30px;
   }
-
-  .footer-wrapper {
-    margin-left: 5%;
-  }
 }
 
 //============================================================================
@@ -440,6 +436,7 @@ footer {
 
   .restaurants {
     width: 100%;
+
     .wrapper-cards {
       display: flex;
       flex-flow: row wrap;
@@ -494,6 +491,7 @@ footer {
       padding-left: 10%;
       padding-right: 10%;
     }
+
     .wrapper-cards {
       display: flex;
       flex-flow: row wrap;
